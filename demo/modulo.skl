@@ -1,0 +1,40 @@
+# Function: modulo dividend mod divisor
+# Inputs: dividend, divisor
+# Output: result
+# Note: divisor is expected to be greater than zero.
+
+input dividend
+input divisor
+
+clear result
+
+dividendCounter = dividend
+
+while dividendCounter <> 0 do
+  incr result
+
+  moduloDivisorRemainder = divisor
+  moduloResultCounter = result
+
+  while moduloResultCounter <> 0 do
+    decr moduloDivisorRemainder
+    decr moduloResultCounter
+  end
+
+  clear moduloIsDivisor
+  incr moduloIsDivisor
+
+  while moduloDivisorRemainder <> 0 do
+    decr moduloDivisorRemainder
+    decr moduloIsDivisor
+  end
+
+  while moduloIsDivisor <> 0 do
+    decr moduloIsDivisor
+    clear result
+  end
+
+  decr dividendCounter
+end
+
+output result

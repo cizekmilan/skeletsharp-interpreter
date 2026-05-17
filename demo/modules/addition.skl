@@ -1,0 +1,19 @@
+# Module: addition plusInputLeft + plusInputRight
+# Inputs: plusInputLeft, plusInputRight
+# Output: plusResult
+
+clear plusResult
+plusTempLeft = plusInputLeft
+plusTempRight = plusInputRight
+
+while plusTempLeft <> 0 do
+  incr plusResult
+  decr plusTempLeft
+end
+
+while plusTempRight <> 0 do
+  incr plusResult
+  decr plusTempRight
+end
+
+# output plusResult

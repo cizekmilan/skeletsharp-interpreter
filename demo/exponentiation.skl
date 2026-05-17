@@ -1,0 +1,28 @@
+# Function: exponentiation base ^ exponent
+# Inputs: base, exponent
+# Output: result
+
+input base
+input exponent
+
+clear result
+incr result
+
+expCounter = exponent
+
+while expCounter <> 0 do
+  expCurrentResult = result
+  clear expNextResult
+  while expCurrentResult <> 0 do
+    expBaseCounter = base
+    while expBaseCounter <> 0 do
+      incr expNextResult
+      decr expBaseCounter
+    end
+    decr expCurrentResult
+  end
+  result = expNextResult
+  decr expCounter
+end
+
+output result

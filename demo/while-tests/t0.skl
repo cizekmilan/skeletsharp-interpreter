@@ -1,0 +1,8 @@
+# While test: single loop
+# Inputs: none
+# Output: counterA countdown
+
+while counterA <> 0 do
+  decr counterA
+  output counterA
+end

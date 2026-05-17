@@ -1,0 +1,17 @@
+# Function: zero test value == 0
+# Inputs: value
+# Output: result
+
+input value
+
+clear result
+incr result
+
+isZeroTemp = value
+
+while isZeroTemp <> 0 do
+  decr isZeroTemp
+  decr result
+end
+
+output result

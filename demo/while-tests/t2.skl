@@ -1,0 +1,12 @@
+# While test: nested loop
+# Inputs: none
+# Output: counterA and counterB countdowns
+
+while counterA <> 0 do
+  decr counterA
+  output counterA
+  while counterB <> 0 do
+    decr counterB
+    output counterB
+  end
+end

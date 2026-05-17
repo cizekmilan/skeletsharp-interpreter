@@ -1,0 +1,13 @@
+# While test: two independent loops
+# Inputs: none
+# Output: counterA and counterB countdowns
+
+while counterA <> 0 do
+  decr counterA
+  output counterA
+end
+
+while counterB <> 0 do
+  decr counterB
+  output counterB
+end

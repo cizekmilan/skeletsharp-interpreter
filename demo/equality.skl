@@ -1,0 +1,53 @@
+# Function: equality comparison left == right
+# Inputs: left, right
+# Output: result
+
+input left
+input right
+
+clear eqResult
+
+eqLeft = left
+eqRight = right
+
+# Compute eqRight - eqLeft.
+while eqLeft <> 0 do
+  decr eqLeft
+  decr eqRight
+end
+
+eqRightMinusLeft = eqRight
+
+eqLeft = left
+eqRight = right
+
+# Compute eqLeft - eqRight.
+while eqRight <> 0 do
+  decr eqLeft
+  decr eqRight
+end
+
+eqLeftMinusRight = eqLeft
+
+clear eqDifferenceSum
+
+while eqRightMinusLeft <> 0 do
+  incr eqDifferenceSum
+  decr eqRightMinusLeft
+end
+
+while eqLeftMinusRight <> 0 do
+  incr eqDifferenceSum
+  decr eqLeftMinusRight
+end
+
+incr eqResult
+
+while eqDifferenceSum <> 0 do
+  decr eqDifferenceSum
+  decr eqResult
+end
+
+result = eqResult
+
+output result

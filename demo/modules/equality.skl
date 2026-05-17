@@ -1,0 +1,48 @@
+# Module: equality comparison eqInputLeft == eqInputRight
+# Inputs: eqInputLeft, eqInputRight
+# Output: eqResult
+
+clear eqResult
+
+eqLeft = eqInputLeft
+eqRight = eqInputRight
+
+# Compute eqRight - eqLeft.
+while eqLeft <> 0 do
+  decr eqLeft
+  decr eqRight
+end
+
+eqRightMinusLeft = eqRight
+
+eqLeft = eqInputLeft
+eqRight = eqInputRight
+
+# Compute eqLeft - eqRight.
+while eqRight <> 0 do
+  decr eqLeft
+  decr eqRight
+end
+
+eqLeftMinusRight = eqLeft
+
+clear eqDifferenceSum
+
+while eqRightMinusLeft <> 0 do
+  incr eqDifferenceSum
+  decr eqRightMinusLeft
+end
+
+while eqLeftMinusRight <> 0 do
+  incr eqDifferenceSum
+  decr eqLeftMinusRight
+end
+
+incr eqResult
+
+while eqDifferenceSum <> 0 do
+  decr eqDifferenceSum
+  decr eqResult
+end
+
+# output eqResult

@@ -1,0 +1,16 @@
+# Function: addition left + right
+# Inputs: left, right
+# Output: result
+
+input left
+input right
+
+result = left
+plusTempRight = right
+
+while plusTempRight <> 0 do
+  incr result
+  decr plusTempRight
+end
+
+output result

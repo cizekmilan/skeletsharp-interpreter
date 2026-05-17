@@ -1,0 +1,137 @@
+# Function: integer division dividend div divisor
+# Inputs: dividend, divisor
+# Output: result
+
+input dividend
+input divisor
+
+clear result
+clear quotientCandidate
+clear currentQuotient
+clear currentProduct
+clear nextMultiple
+clear equalityFlag
+
+dividendCounter = dividend
+clear stepCounter
+
+while dividendCounter <> 0 do
+  # currentProduct = currentQuotient * divisor
+    multInputLeft = currentQuotient
+    multInputRight = divisor
+    multCounter = multInputLeft
+    clear multResult
+    while multCounter <> 0 do
+      multAddend = multInputRight
+      while multAddend <> 0 do
+        incr multResult
+        decr multAddend
+      end
+      decr multCounter
+    end
+    currentProduct = multResult
+  # /currentProduct = currentQuotient * divisor
+
+
+  # stepCounter = stepCounter + 1
+      incr stepCounter
+
+  # /stepCounter = stepCounter + 1
+
+
+  # nextMultiple = currentProduct + divisor
+    clear plusResult
+    plusTempLeft = currentProduct
+    plusTempRight = divisor
+
+    while plusTempLeft <> 0 do
+      incr plusResult
+      decr plusTempLeft
+    end
+
+    while plusTempRight <> 0 do
+      incr plusResult
+      decr plusTempRight
+    end
+    nextMultiple = plusResult
+
+  # /nextMultiple = currentProduct + divisor
+
+
+  # equalityFlag = eq(stepCounter, nextMultiple)
+    clear eqResult
+
+    eqInputLeft = stepCounter
+    eqInputRight = nextMultiple
+
+    eqLeft = eqInputLeft
+    eqRight = eqInputRight
+
+    # Compute eqRight - eqLeft.
+    while eqLeft <> 0 do
+      decr eqLeft
+      decr eqRight
+    end
+
+    eqRightMinusLeft = eqRight
+
+    eqLeft = eqInputLeft
+    eqRight = eqInputRight
+
+    # Compute eqLeft - eqRight.
+    while eqRight <> 0 do
+      decr eqLeft
+      decr eqRight
+    end
+
+    eqLeftMinusRight = eqLeft
+
+    clear eqDifferenceSum
+
+    while eqRightMinusLeft <> 0 do
+      incr eqDifferenceSum
+      decr eqRightMinusLeft
+    end
+
+    while eqLeftMinusRight <> 0 do
+      incr eqDifferenceSum
+      decr eqLeftMinusRight
+    end
+
+    incr eqResult
+
+    while eqDifferenceSum <> 0 do
+      decr eqDifferenceSum
+      decr eqResult
+    end
+
+    equalityFlag = eqResult
+
+  # /equalityFlag = eq(stepCounter, nextMultiple)
+
+
+  # quotientCandidate = equalityFlag + currentQuotient
+    clear plusResult
+    plusTempLeft = equalityFlag
+    plusTempRight = currentQuotient
+
+    while plusTempLeft <> 0 do
+      incr plusResult
+      decr plusTempLeft
+    end
+
+    while plusTempRight <> 0 do
+      incr plusResult
+      decr plusTempRight
+    end
+
+    quotientCandidate = plusResult
+  # /quotientCandidate = equalityFlag + currentQuotient
+
+  decr dividendCounter
+
+  result = quotientCandidate
+  currentQuotient = quotientCandidate
+end
+
+output result

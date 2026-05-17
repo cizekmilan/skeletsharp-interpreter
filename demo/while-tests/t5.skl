@@ -1,0 +1,70 @@
+# While test: expanded assignment and addition pattern
+# Inputs: left, right
+# Output: right and temp countdowns
+
+input left
+input right
+
+while temp <> 0 do
+  decr temp
+end
+
+while copiedRight <> 0 do
+  decr copiedRight
+end
+
+while right <> 0 do
+  incr temp
+  decr right
+end
+
+while temp <> 0 do
+  incr copiedRight
+  incr right
+  decr temp
+end
+output right
+
+while temp <> 0 do
+  decr temp
+  output temp
+end
+
+while result <> 0 do
+  decr result
+end
+
+while left <> 0 do
+  incr temp
+  decr left
+end
+
+while temp <> 0 do
+  incr result
+  incr left
+  decr temp
+end
+
+while temp <> 0 do
+  decr temp
+end
+
+while copiedRightForSum <> 0 do
+  decr copiedRightForSum
+end
+
+while right <> 0 do
+  incr temp
+  decr right
+end
+
+while temp <> 0 do
+  incr copiedRightForSum
+  incr right
+  decr temp
+end
+
+while copiedRightForSum <> 0 do
+  incr result
+  decr copiedRightForSum
+end

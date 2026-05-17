@@ -1,0 +1,18 @@
+# While test: three nested loops
+# Inputs: none
+# Output: counterA, counterB and counterC countdowns
+
+while counterA <> 0 do
+  decr counterA
+  output counterA
+  while counterB <> 0 do
+    decr counterB
+    output counterB
+    while counterC <> 0 do
+      decr counterC
+      output counterC
+    end
+  end
+end
+
+output counterA

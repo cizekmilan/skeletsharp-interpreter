@@ -1,0 +1,30 @@
+# Function: factorial number!
+# Inputs: number
+# Output: result
+
+input number
+
+clear result
+incr result
+
+while number <> 0 do
+  multInputLeft = result
+  multInputRight = number
+
+  multCounter = multInputLeft
+  clear multResult
+  while multCounter <> 0 do
+    multAddend = multInputRight
+    while multAddend <> 0 do
+      incr multResult
+      decr multAddend
+    end
+    decr multCounter
+  end
+
+  result = multResult
+
+  decr number
+end
+
+output result

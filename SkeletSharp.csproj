@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>SkeletSharp</AssemblyName>
+    <RootNamespace>SkeletSharp</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <Authors>Milan Cizek</Authors>
+    <Description>Skeleton language interpreter with a built-in preprocessor.</Description>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="SkeletSharp.Tests\**\*.cs" />
+    <EmbeddedResource Remove="SkeletSharp.Tests\**\*" />
+    <None Remove="SkeletSharp.Tests\**\*" />
+  </ItemGroup>
+</Project>

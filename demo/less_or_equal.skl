@@ -1,0 +1,24 @@
+# Function: less-or-equal comparison left <= right
+# Inputs: left, right
+# Output: result
+
+input left
+input right
+
+leftRemainder = left
+rightRemainder = right
+
+while rightRemainder <> 0 do
+  decr leftRemainder
+  decr rightRemainder
+end
+
+clear result
+incr result
+
+while leftRemainder <> 0 do
+  decr leftRemainder
+  decr result
+end
+
+output result

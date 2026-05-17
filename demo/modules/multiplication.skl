@@ -1,0 +1,17 @@
+# Module: multiplication multInputLeft * multInputRight
+# Inputs: multInputLeft, multInputRight
+# Output: multResult
+
+multCounter = multInputLeft
+clear multResult
+
+while multCounter <> 0 do
+  multAddend = multInputRight
+  while multAddend <> 0 do
+    incr multResult
+    decr multAddend
+  end
+  decr multCounter
+end
+
+# output multResult
