@@ -158,15 +158,15 @@ There is currently no `include` mechanism, so modules are examples of reusable b
 |-- WhileLoopContext.cs            # Runtime while-loop state
 |-- Program.cs                     # Console application entry point
 |
-|-- demo/
+|-- demo/                          # Runnable demonstration programs
 |   |-- addition.skl
 |   |-- multiplication.skl
 |   |-- factorial.skl
 |   |-- ...
-|   |-- modules/
-|   `-- while-tests/
+|   |-- modules/                   # Reusable snippets for manual insertion
+|   `-- while-tests/               # Focused while-loop behavior experiments
 |
-|-- SkeletSharp.Tests/
+|-- SkeletSharp.Tests/             # xUnit test project
 |   |-- PreprocessorTests.cs
 |   |-- LexerTests.cs
 |   |-- RuntimeValueTests.cs
