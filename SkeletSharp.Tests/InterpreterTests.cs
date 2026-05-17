@@ -49,6 +49,16 @@ public class InterpreterTests
     }
 
     [Fact]
+    public void Execute_SelfAssignmentPreservesVariableValue()
+    {
+        const string source = "input x\nx = x\noutput x";
+
+        string output = ExecuteWithConsole(source, "7");
+
+        Assert.Contains("x: 7", output);
+    }
+
+    [Fact]
     public void Execute_ListsVariablesSortedByName()
     {
         const string source = "incr b\nincr a";

@@ -1,6 +1,7 @@
 # Function: integer division dividend div divisor
 # Inputs: dividend, divisor
 # Output: result
+# Note: divisor is expected to be greater than zero.
 
 input dividend
 input divisor

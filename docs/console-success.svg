@@ -1,6 +1,6 @@
 <svg width="920" height="360" viewBox="0 0 920 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Successful SkeletSharp console run</title>
-  <desc id="desc">Terminal screenshot showing an addition demo run with comments enabled and result 5.</desc>
+  <desc id="desc">Terminal screenshot showing an addition example run with comments enabled and result 5.</desc>
   <rect width="920" height="360" rx="12" fill="#0d1117"/>
   <rect x="0" y="0" width="920" height="42" rx="12" fill="#161b22"/>
   <circle cx="24" cy="21" r="6" fill="#ff5f56"/>

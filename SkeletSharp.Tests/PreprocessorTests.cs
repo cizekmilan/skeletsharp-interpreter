@@ -40,6 +40,18 @@ public class PreprocessorTests
     }
 
     [Fact]
+    public void Preprocessed_RewritesSelfAssignmentWithoutClearingTargetFirst()
+    {
+        Preprocessor preprocessor = new Preprocessor("x = x");
+
+        string output = preprocessor.Preprocessed;
+
+        Assert.Contains("while x<> 0 do", output);
+        Assert.DoesNotContain("while x<> 0 do\r\n    decr x", output);
+        Assert.Contains("incr x", output);
+    }
+
+    [Fact]
     public void Preprocessed_DoesNotRewriteCommentLine()
     {
         const string source = "# clear x";

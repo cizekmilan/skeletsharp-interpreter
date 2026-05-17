@@ -120,34 +120,34 @@ output result
 
 Although the program uses assignment, the interpreter ultimately executes only the core operations after preprocessing.
 
-# 🧩 Demo Programs
+# 🧩 Examples
 
-The `demo/` directory contains runnable `.skl` programs demonstrating how higher-level operations can be composed from the minimal instruction set.
+The `examples/` directory contains runnable `.skl` programs demonstrating how higher-level operations can be composed from the minimal instruction set.
 
 | File | Demonstrates |
 | --- | --- |
-| `demo/addition.skl` | addition |
-| `demo/monus.skl` | monus / saturated subtraction |
-| `demo/multiplication.skl` | multiplication |
-| `demo/equality.skl` | equality comparison |
-| `demo/less_than.skl` | less-than comparison |
-| `demo/less_or_equal.skl` | less-or-equal comparison |
-| `demo/is_zero.skl` | zero test |
-| `demo/exponentiation.skl` | exponentiation |
-| `demo/factorial.skl` | factorial |
-| `demo/integer_division.skl` | integer division |
-| `demo/modulo.skl` | modulo |
+| `examples/addition.skl` | addition |
+| `examples/monus.skl` | monus / saturated subtraction |
+| `examples/multiplication.skl` | multiplication |
+| `examples/equality.skl` | equality comparison |
+| `examples/less_than.skl` | less-than comparison |
+| `examples/less_or_equal.skl` | less-or-equal comparison |
+| `examples/is_zero.skl` | zero test |
+| `examples/exponentiation.skl` | exponentiation |
+| `examples/factorial.skl` | factorial |
+| `examples/integer_division.skl` | integer division |
+| `examples/modulo.skl` | modulo |
 
 Additional while-loop experiments are stored in:
 
 ```text
-demo/while-tests/
+examples/while-tests/
 ```
 
 Reusable code snippets intended for manual insertion are stored in:
 
 ```text
-demo/modules/
+examples/modules/
 ```
 
 There is currently no `include` mechanism, so modules are examples of reusable blocks rather than independently imported source files.
@@ -166,7 +166,7 @@ There is currently no `include` mechanism, so modules are examples of reusable b
 |-- WhileLoopContext.cs            # Runtime while-loop state
 |-- Program.cs                     # Console application entry point
 |
-|-- demo/                          # Runnable demonstration programs
+|-- examples/                      # Runnable example programs
 |   |-- addition.skl
 |   |-- multiplication.skl
 |   |-- factorial.skl
@@ -194,7 +194,7 @@ The project has no runtime NuGet dependencies.
 
 The test project uses:
 
-* `xunit`
+* `xunit.v3`
 * `Microsoft.NET.Test.Sdk`
 * `xunit.runner.visualstudio`
 * `coverlet.collector`
@@ -210,10 +210,10 @@ dotnet build SkeletSharp.sln
 
 # 🚀 Running
 
-Run a demo program:
+Run an example program:
 
 ```powershell
-dotnet run --project SkeletSharp.csproj -- demo/addition.skl
+dotnet run --project SkeletSharp.csproj -- examples/addition.skl
 ```
 
 Example input:
@@ -282,7 +282,8 @@ Known limitations:
 * There is no parser or AST layer; execution works directly over the token stream.
 * There is no `include` mechanism for module files.
 * Error messages are in English, while code comments are currently Czech.
-* Demo programs are educational and optimized for readability rather than performance.
+* Division and modulo examples expect a divisor greater than zero.
+* Example programs are educational and optimized for readability rather than performance.
 
 # Status
 
@@ -293,7 +294,7 @@ Current status:
 * ✅ xUnit test project included
 * ✅ core interpreter implemented
 * ✅ preprocessor implemented for `clear` and assignment
-* ✅ demo programs added for arithmetic, comparison, factorial, modulo, and loop behavior
+* ✅ example programs added for arithmetic, comparison, factorial, modulo, and loop behavior
 * ✅ custom syntax/runtime exceptions with line and column information
 
 # License

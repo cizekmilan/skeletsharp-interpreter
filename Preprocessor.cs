@@ -144,6 +144,9 @@ namespace SkeletSharp
         /// </summary>
         private static string CreateAssignCode(string leftVariableName, string rightVariableName, string helperVariableName)
         {
+            if (leftVariableName == rightVariableName)
+                return CreateSelfAssignCode(leftVariableName, helperVariableName);
+
             // Pomocná proměnná musí mít unikátní interní název. Původní pevné "aux" mohlo
             // kolidovat s proměnnou uživatele a změnit výsledek interpretovaného programu.
             return $$"""
@@ -164,6 +167,31 @@ namespace SkeletSharp
                 while {{helperVariableName}} <> 0 do
                     incr {{leftVariableName}}
                     incr {{rightVariableName}}
+                    decr {{helperVariableName}}
+                end
+                """;
+        }
+
+        /// <summary>
+        /// Vytvoří kód pro přiřazení proměnné do sebe sama bez ztráty její hodnoty.
+        /// </summary>
+        private static string CreateSelfAssignCode(string variableName, string helperVariableName)
+        {
+            // U var = var nesmíme použít běžné přiřazení, protože to nejdřív nulovalo cílovou
+            // proměnnou. Hodnotu proto jen dočasně přesuneme do pomocné proměnné a zase zpět.
+            return $$"""
+
+                while {{helperVariableName}}<> 0 do
+                    decr {{helperVariableName}}
+                end
+
+                while {{variableName}}<> 0 do
+                    incr {{helperVariableName}}
+                    decr {{variableName}}
+                end
+
+                while {{helperVariableName}} <> 0 do
+                    incr {{variableName}}
                     decr {{helperVariableName}}
                 end
                 """;
