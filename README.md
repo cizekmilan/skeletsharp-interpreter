@@ -95,7 +95,7 @@ is expanded into core instructions that copy the value from `source` to `target`
 
 The generated code uses internal helper variables such as `auxAssign1`, `auxAssign2`, and so on. These names are generated to avoid collisions with identifiers already present in the user program. This matters because a fixed helper name, such as `aux`, could overwrite a user variable and silently change program behavior.
 
-# ✨ Example
+# ✨ Addition Walkthrough
 
 The following program computes `left + right`:
 
@@ -120,9 +120,9 @@ output result
 
 Although the program uses assignment, the interpreter ultimately executes only the core operations after preprocessing.
 
-# 🧩 Examples
+# 🧩 Demo Programs
 
-The `examples/` directory contains runnable `.skl` programs demonstrating how higher-level operations can be composed from the minimal instruction set.
+The `examples/` directory contains runnable demo programs showing how higher-level operations can be composed from the minimal instruction set.
 
 | File | Demonstrates |
 | --- | --- |
@@ -166,7 +166,7 @@ There is currently no `include` mechanism, so modules are examples of reusable b
 |-- WhileLoopContext.cs            # Runtime while-loop state
 |-- Program.cs                     # Console application entry point
 |
-|-- examples/                      # Runnable example programs
+|-- examples/                      # Runnable demo programs
 |   |-- addition.skl
 |   |-- multiplication.skl
 |   |-- factorial.skl
@@ -210,7 +210,7 @@ dotnet build SkeletSharp.sln
 
 # 🚀 Running
 
-Run an example program:
+Run a demo program:
 
 ```powershell
 dotnet run --project SkeletSharp.csproj -- examples/addition.skl
@@ -282,8 +282,8 @@ Known limitations:
 * There is no parser or AST layer; execution works directly over the token stream.
 * There is no `include` mechanism for module files.
 * Error messages are in English, while code comments are currently Czech.
-* Division and modulo examples expect a divisor greater than zero.
-* Example programs are educational and optimized for readability rather than performance.
+* Division and modulo demos expect a divisor greater than zero.
+* Demo programs are educational and optimized for readability rather than performance.
 
 # Status
 
@@ -294,7 +294,7 @@ Current status:
 * ✅ xUnit test project included
 * ✅ core interpreter implemented
 * ✅ preprocessor implemented for `clear` and assignment
-* ✅ example programs added for arithmetic, comparison, factorial, modulo, and loop behavior
+* ✅ demo programs added for arithmetic, comparison, factorial, modulo, and loop behavior
 * ✅ custom syntax/runtime exceptions with line and column information
 
 # License
