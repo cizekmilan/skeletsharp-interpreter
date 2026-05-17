@@ -230,16 +230,6 @@ result: 5
 OK
 ```
 
-## Console Examples
-
-Successful run with comments enabled:
-
-![Successful console run](docs/console-success.svg)
-
-Syntax error detection using an intentionally invalid example:
-
-![Syntax error console run](docs/console-syntax-error.svg)
-
 ## Command Line Options
 
 ```text
@@ -253,6 +243,16 @@ Options:
 | `-c` | display comment lines during execution |
 | `-l` | display preprocessed source code before execution |
 | `-d` | display all variables after execution |
+
+## Console Examples
+
+Successful run with comments enabled:
+
+![Successful console run](docs/console-success.svg)
+
+Syntax error detection using an intentionally invalid example:
+
+![Syntax error console run](docs/console-syntax-error.svg)
 
 # 🧪 Testing
 
