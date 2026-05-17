@@ -28,6 +28,14 @@ This project demonstrates that idea in a practical and inspectable way:
 
 The goal is not to create a production programming language. The goal is to make the mechanics of computation visible.
 
+# 📚 Source Material
+
+The project is based on the skeleton programming language described in the Czech university study text:
+
+> Viktor Pavliska, *Vyčíslitelnost a složitost 2*, Ostrava University, 2004.
+
+The most relevant part is chapter [4.1 Skeletový programovací jazyk](https://web.osu.cz/~Habiballa/opory/xvys2.pdf#page=57), followed by sections on partial recursive functions and functions programmable in the skeleton language.
+
 # 🧠 Language Model
 
 ## Core Instructions
@@ -221,6 +229,16 @@ Expected output:
 result: 5
 OK
 ```
+
+## Console Examples
+
+Successful run with comments enabled:
+
+![Successful console run](docs/console-success.svg)
+
+Syntax error detection using an intentionally invalid example:
+
+![Syntax error console run](docs/console-syntax-error.svg)
 
 ## Command Line Options
 

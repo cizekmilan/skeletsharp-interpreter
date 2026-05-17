@@ -1,0 +1,24 @@
+<svg width="920" height="332" viewBox="0 0 920 332" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">SkeletSharp syntax error detection</title>
+  <desc id="desc">Terminal screenshot showing a syntax error caused by a while loop header missing the do keyword.</desc>
+  <rect width="920" height="332" rx="12" fill="#0d1117"/>
+  <rect x="0" y="0" width="920" height="42" rx="12" fill="#161b22"/>
+  <circle cx="24" cy="21" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="21" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="21" r="6" fill="#27c93f"/>
+  <text x="90" y="27" fill="#c9d1d9" font-family="Consolas, monospace" font-size="18">SkeletSharp - syntax error</text>
+
+  <g font-family="Consolas, monospace" font-size="18">
+    <text x="26" y="74" fill="#58a6ff">PS&gt;</text>
+    <text x="66" y="74" fill="#c9d1d9">dotnet run --project SkeletSharp.csproj -- while.syntax-error.skl -c</text>
+
+    <text x="26" y="114" fill="#d29922"># While test: intentionally invalid loop header</text>
+    <text x="26" y="140" fill="#d29922"># Inputs: none</text>
+    <text x="26" y="166" fill="#d29922"># Output: counter countdown</text>
+
+    <text x="26" y="206" fill="#ff7b72">BAD</text>
+    <text x="26" y="232" fill="#ff7b72">Expected Do, found NewLine line: 5, column: 2</text>
+    <text x="26" y="258" fill="#ff7b72">Use -c -l for more details about the error.</text>
+    <text x="26" y="306" fill="#bc8cff">Completed in 00:00:00.0430093</text>
+  </g>
+</svg>
