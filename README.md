@@ -244,6 +244,14 @@ Options:
 | `-l` | display preprocessed source code before execution |
 | `-d` | display all variables after execution |
 
+## Exit Codes
+
+| Code | Meaning |
+| --- | --- |
+| `0` | program executed successfully |
+| `1` | syntax or runtime error while interpreting the source program |
+| `2` | invalid command line usage, unknown option, or missing source file |
+
 ## Console Examples
 
 Successful run with comments enabled:

@@ -10,6 +10,10 @@ namespace SkeletSharp
     /// </summary>
     class Program
     {
+        private const int SuccessExitCode = 0;
+        private const int ProgramErrorExitCode = 1;
+        private const int UsageErrorExitCode = 2;
+
         private static bool displayComments = false;
         private static bool displaySource = false;
         private static bool displayVariables = false;
@@ -82,6 +86,10 @@ namespace SkeletSharp
         /// </summary>
         private static bool TryParseArguments(string[] args)
         {
+            displayComments = false;
+            displaySource = false;
+            displayVariables = false;
+
             bool result = true;
             if (args.Length < 1 || args.Length > 4)
             {
@@ -132,43 +140,51 @@ namespace SkeletSharp
         /// Spustí konzolovou aplikaci.
         /// </summary>
         /// <param name="args">Argumenty příkazové řádky.</param>
-        static void Main(string[] args)
+        /// <returns>Návratový kód vhodný pro skripty a CI prostředí.</returns>
+        static int Main(string[] args)
         {
-            if (TryParseArguments(args))
-            {
-                Stopwatch stopwatch = Stopwatch.StartNew();
-                string fileName = args[0];
-                Interpreter interpreter = null;
-                try
-                {
-                    string source = File.ReadAllText(fileName);
-                    if (displaySource) DisplayPreprocessedSource(source);
+            int exitCode = SuccessExitCode;
 
-                    interpreter = new Interpreter(source, displayComments);
-                    interpreter.Execute();
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("OK");
-                    Console.ResetColor();
-                    if (displayVariables) DisplayVariables(interpreter);
-                }
-                catch (Exception exception)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("BAD");
-                    Console.WriteLine(exception.Message);
-                    Console.WriteLine("Use -c -l for more details about the error.");
-                    Console.ResetColor();
-                    DisplayVariables(interpreter);
-                }
-                stopwatch.Stop();
-                TimeSpan elapsedTime = stopwatch.Elapsed;
-                Console.WriteLine();
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("Completed in " + elapsedTime.ToString("c"));
-                Console.ResetColor();
+            if (!TryParseArguments(args))
+            {
+                WaitForKeyIfInteractive();
+                return UsageErrorExitCode;
             }
 
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            string fileName = args[0];
+            Interpreter interpreter = null;
+            try
+            {
+                string source = File.ReadAllText(fileName);
+                if (displaySource) DisplayPreprocessedSource(source);
+
+                interpreter = new Interpreter(source, displayComments);
+                interpreter.Execute();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("OK");
+                Console.ResetColor();
+                if (displayVariables) DisplayVariables(interpreter);
+            }
+            catch (Exception exception)
+            {
+                exitCode = ProgramErrorExitCode;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("BAD");
+                Console.WriteLine(exception.Message);
+                Console.WriteLine("Use -c -l for more details about the error.");
+                Console.ResetColor();
+                DisplayVariables(interpreter);
+            }
+            stopwatch.Stop();
+            TimeSpan elapsedTime = stopwatch.Elapsed;
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("Completed in " + elapsedTime.ToString("c"));
+            Console.ResetColor();
+
             WaitForKeyIfInteractive();
+            return exitCode;
         }
     }
 }
