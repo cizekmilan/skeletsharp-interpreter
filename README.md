@@ -156,32 +156,36 @@ There is currently no `include` mechanism, so modules are examples of reusable b
 
 ```text
 /
-|-- Interpreter.cs                 # Executes preprocessed skeleton source code
-|-- Lexer.cs                       # Converts source text into tokens
-|-- Preprocessor.cs                # Expands clear and assignment into core code
-|-- RuntimeValue.cs                # Runtime value representation
-|-- SourcePosition.cs              # Source location tracking
-|-- SkeletonException.cs           # Custom syntax/runtime exceptions
-|-- Token.cs                       # Token definitions
-|-- WhileLoopContext.cs            # Runtime while-loop state
-|-- Program.cs                     # Console application entry point
-|
-|-- examples/                      # Runnable demo programs
-|   |-- addition.skl
-|   |-- multiplication.skl
-|   |-- factorial.skl
-|   |-- ...
-|   |-- modules/                   # Reusable snippets for manual insertion
-|   `-- while-tests/               # Focused while-loop behavior experiments
-|
-|-- SkeletSharp.Tests/             # xUnit test project
-|   |-- PreprocessorTests.cs
-|   |-- LexerTests.cs
-|   |-- RuntimeValueTests.cs
-|   `-- InterpreterTests.cs
-|
-|-- SkeletSharp.csproj
-`-- SkeletSharp.sln
+├── Interpreter.cs                 # Executes preprocessed skeleton source code
+├── Lexer.cs                       # Converts source text into tokens
+├── Preprocessor.cs                # Expands clear and assignment into core code
+├── RuntimeValue.cs                # Runtime value representation
+├── SourcePosition.cs              # Source location tracking
+├── SkeletonException.cs           # Custom syntax/runtime exceptions
+├── Token.cs                       # Token definitions
+├── WhileLoopContext.cs            # Runtime while-loop state
+├── Program.cs                     # Console application entry point
+│
+├── docs/                          # README console screenshots
+│   ├── console-success.svg
+│   └── console-syntax-error.svg
+│
+├── examples/                      # Runnable demo programs
+│   ├── addition.skl
+│   ├── multiplication.skl
+│   ├── factorial.skl
+│   ├── ...
+│   ├── modules/                   # Reusable snippets for manual insertion
+│   └── while-tests/               # Focused while-loop behavior experiments
+│
+├── SkeletSharp.Tests/             # xUnit test project
+│   ├── PreprocessorTests.cs
+│   ├── LexerTests.cs
+│   ├── RuntimeValueTests.cs
+│   └── InterpreterTests.cs
+│
+├── SkeletSharp.csproj
+└── SkeletSharp.sln
 ```
 
 # 🔧 Requirements
